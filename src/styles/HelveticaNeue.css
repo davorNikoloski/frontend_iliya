@@ -1,0 +1,11 @@
+@font-face {
+  font-family: 'Helvetica Neue';
+  src: url('../fonts/Helvetica-Neue-Font/HelveticaNeueLT/HelveticaNeueLTTrue.ttf') format('ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Apply the Helvetica Neue font to elements with the "font-helvetica-neue" class */
+.font-helvetica-neue {
+  font-family: 'Helvetica Neue', sans-serif;
+}

@@ -1,0 +1,9 @@
+.selected_link_color {
+    color: #2e6eff; /* Your custom color value */
+}
+.standby_link_color {
+    color: #707070; /* Your custom color value */
+}
+.home_info_text{
+    color: #3C3C3C;
+}
