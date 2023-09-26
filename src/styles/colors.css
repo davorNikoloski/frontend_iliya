@@ -7,3 +7,6 @@
 .home_info_text{
     color: #3C3C3C;
 }
+.bg-overlay {
+    background-color: hsla(0, 0%, 0%, 0.85); /* Change HSLA values as needed */
+  }
