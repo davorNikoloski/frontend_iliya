@@ -1,5 +1,7 @@
 import React from 'react';
 
+import PropTypes from 'prop-types';
+
 import 'tailwindcss/tailwind.css';
 
 //SVG IMPORTS
@@ -51,7 +53,15 @@ const ProjectCard = ({title, subtitle, description, shape1, shape2, asset}) => {
       
     </div>
   );
-  
+};
+
+ProjectCard.propTypes = {
+  title: PropTypes.string.isRequired,
+  subtitle: PropTypes.string.isRequired,
+  description: PropTypes.string.isRequired,
+  shape1: PropTypes.string.isRequired,
+  shape2: PropTypes.string.isRequired,
+  asset: PropTypes.string.isRequired,
 };
 
 export default ProjectCard;
