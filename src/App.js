@@ -1,35 +1,36 @@
-import React/*, { useState, useEffect } */from 'react';
+import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-
-//COMPONENT IMPORTS
-
-import Navbar from './components/Navbar/Navbar'
-import Home from './components/Home/Home'
-import ProjectContainer from './components/Project/ProjectContainer'
-import PastProjects from './components/Project/PastProjects';
-import ContactForm from './components/Contact/Contact';
+import Navbar from './components/Navbar/Navbar';
+import Project1 from './components/Project/StaticProjects/Project1';
+import Project2 from './components/Project/StaticProjects/Project2';
+import Project3 from './components/Project/StaticProjects/Project3';
+import Project4 from './components/Project/StaticProjects/Project4';
 
 import About from './components/About/About';
+import MainPage from './components/Main/MainPage'; // Import the MainPage component
+import Resume from './components/Resume/Resume'
+import Footer from './components/Footer/Footer'
+
+
 
 function App() {
-
-
-
   return (
     <Router>
-      <Navbar/>
-      
-      <Home/>
-      <hr className="w-10/12 h-0.5 mx-auto my-1 bg-gray-100 border-0 rounded md:my-10 dark:bg-gray-500"/>
-      <ProjectContainer />
-      <PastProjects/>
-      <hr className="w-10/12 h-0.5 mx-auto my-1 bg-gray-100 border-0 rounded md:my-10 dark:bg-gray-500"/>
-      <ContactForm/>
+      <Navbar />
 
-        <Routes>
-          <Route path="/About" element={<About />} />
-          <Route path="/About" element={<About />} />
-        </Routes>
+      <Routes>
+        <Route path="/" element={<MainPage />} />
+        <Route path="/Virtuocity" element={<Project1 />} />
+        <Route path="/Angry_Birds_World" element={<Project2 />} />
+        <Route path="/Snow_Dunes" element={<Project3 />} />
+        <Route path="/Embassy_of_Sweden" element={<Project4 />} />
+        
+        <Route id='aboutSection' path="/About" element={<About />} />
+
+        <Route path="/Resume" element={<Resume />} />
+
+      </Routes>
+      <Footer/>
     </Router>
   );
 }

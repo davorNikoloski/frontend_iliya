@@ -1,56 +1,40 @@
 import React from 'react';
-
 import PropTypes from 'prop-types';
-
 import 'tailwindcss/tailwind.css';
 
-//SVG IMPORTS
+import '../../styles/fonts.css';
 
 
-const ProjectCard = ({title, subtitle, description, shape1, shape2, asset}) => {
+const ProjectCard = ({ title, subtitle, description, shape1, shape2, asset, link }) => {
   return (
-    <div className="w-full h-screen bg-gray-100 p-4 md:p-6 lg:p-8 flex flex-col h-full">
-      {/* Top Div (25% height) */}
-      <div className="h-1/4 flex flex-col md:flex-row">
-        {/* Left Div */}
-        <div className="w-1/2 lg:w-1/2 md:w-1/2 md:mr-6 pl-5">
-          <div className="flex items-center mb-4">
-            {/* SVG icon */}
-            <img
-              src={shape1}
-              alt="Iliya Binoski"
-              className="max-w-full h-auto md:w-5 "
-            />
-            <h1 className="text-5xl ml-4 font-semibold font-helvetica-neue">{title}</h1>
+    <div className="w-full p-4 md:p-6 lg:p-8 flex flex-col">
+      <div className="md:flex md:flex-row">
+        <div className="w-full md:w-1/2 md:mr-6 pl-5">
+          <div className="flex md:items-center items-start md:mb-0 md-4">
+            <img src={shape1} alt="Shape 1" className="max-w-full h-auto md:w-[23px] w-[20px] md:mt-0 mt-[14px] " />
+            <h1 className="text-5xl ml-[15px] font-semibold font-helvetica-neue">{title}</h1>
           </div>
-          <h3 className="text-gray-600 text-xl ml-10">{subtitle}</h3>
+          <h3 className="text-gray-700 text-xl font-mont-lighter ml-[40px]">{subtitle}</h3>
         </div>
-        {/* Right Div */}
-        <div className="w-1/2 lg:w-1/2 md:w-1/2 mt-4 md:mt-0 pr-5">
-          <p className="text-black font-helvetica-neue text-lg tracking-tight	">
-          {description}
+        <div className="w-full md:w-1/2 mt-4 md:mt-0 md:pr-5 md:pl-0 pl-[16%]">
+          <p className="text-black font-helvetica-neue text-[23px] md:p-0 ">
+            {description}
           </p>
-          <div className="mt-4 flex items-center">
-            <a href="/view-project" className="pr-3 text-black text-xl font-bold font-helvetica-neue">
+          <div className="mt-4 flex items-center w-full">
+            <a href={link} className="pr-3 text-black text-[25px] font-bold font-helvetica-neue">
               View Project
             </a>
-            <img
-              src={shape2}
-              alt="Iliya Binoski"
-              className="max-w-full h-auto md:w-7 "
-            />
+            <a href={link}><img src={shape2} alt="Shape 2" className="max-w-full h-auto md:w-7 w-6" /></a>
           </div>
         </div>
       </div>
-      {/* Bottom Div (Remaining height) */}
-      <div className=" flex flex-grow h-3/4 justify-center content-center mt-10 mb-10">
+      <div className="flex flex-grow justify-center content-center mt-10 mb-10">
         <img
           src={asset}
-          alt="Iliya Binoski"
-          className="max-w-full h-100 md:w-/12 "
+          alt="Project Asset"
+          className="w-full md:w-auto" // Set full width for mobile, auto width for desktop
         />
       </div>
-      
     </div>
   );
 };
@@ -62,6 +46,7 @@ ProjectCard.propTypes = {
   shape1: PropTypes.string.isRequired,
   shape2: PropTypes.string.isRequired,
   asset: PropTypes.string.isRequired,
+  link: PropTypes.string.isRequired,
 };
 
 export default ProjectCard;

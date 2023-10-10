@@ -1,12 +1,46 @@
 .selected_link_color {
     color: #2e6eff; /* Your custom color value */
 }
+.vc-blue {
+    color: #2d6eff; /* Your custom color value */
+}
+.sd-p{
+    color: #52BF47
+}
+.es-p{
+    color: #ED6DEE;
+}
 .standby_link_color {
     color: #707070; /* Your custom color value */
 }
 .home_info_text{
     color: #3C3C3C;
 }
+.contact_main_text{
+    color: #1a1a1a;
+}
 .bg-overlay {
     background-color: hsla(0, 0%, 0%, 0.85); /* Change HSLA values as needed */
   }
+
+.main-bg{
+    background-color:#f4f4f4;
+}
+.vc-bg{
+    background-color:#e5e5e5;
+
+}
+.ab-red{
+    color:#ED1C25;
+
+}
+.overlay-head{
+    color:#ebebeb
+}
+.footer-bg{
+    background-color: #3B3B3B;
+}
+
+.footer-text{
+    color: #B1B1B1;
+}

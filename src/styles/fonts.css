@@ -1,0 +1,53 @@
+@font-face {
+  font-family: 'Helvetica Neue';
+  src: url('../fonts/Helvetica-Neue-Font/HelveticaNeueLT/HelveticaNeueLTTrue.ttf') format('ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Helvetica Neue Light';
+  src: url('../fonts/Helvetica-Neue-Font/HelveticaNeueUltraLight/HelveticaNeueUltraLight.ttf') format('ttf');
+  font-weight: lighter;
+  font-style: normal;
+}
+
+/* Apply the Helvetica Neue font to elements with the "font-helvetica-neue" class */
+.font-helvetica-neue {
+  font-family: 'Helvetica Neue', sans-serif;
+}
+.font-helvetica-neue-light {
+  font-family: 'Helvetica Neue Light', sans-serif;
+  font-weight: 100; /* Set the font-weight to lighter */
+}
+
+.font-mont {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: normal;
+
+}
+.font-mont-b {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+
+}
+.font-mont-thin {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 100;
+
+}
+.font-mont-lighter {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 200;
+
+}
+.font-mont-lighterer {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 300;
+
+}
+.font-mont-light {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+
+}
