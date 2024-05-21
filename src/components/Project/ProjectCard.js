@@ -8,6 +8,7 @@ import '../../styles/fonts.css';
 const ProjectCard = ({ title, subtitle, description, shape1, shape2, asset, link }) => {
   return (
     <div className="w-full p-4 md:p-6 lg:p-8 flex flex-col">
+      
       <div className="md:flex md:flex-row">
         <div className="w-full md:w-1/2 md:mr-6 pl-5">
           <div className="flex md:items-center items-start md:mb-0 md-4">
@@ -35,7 +36,9 @@ const ProjectCard = ({ title, subtitle, description, shape1, shape2, asset, link
           className="w-full md:w-auto" // Set full width for mobile, auto width for desktop
         />
       </div>
+
     </div>
+
   );
 };
 

@@ -56,6 +56,7 @@ const Navbar = () => {
       setSelectedLink('Contact');
     }
   };
+  
 
   useEffect(() => {
     const handleScroll = () => {
@@ -104,11 +105,27 @@ const Navbar = () => {
       }, 100);
     };
 
+    const handleHomeClick = () => {
+      if (location.pathname !== '/') {
+        window.location.href = '/'; // Navigate to the home page
+      }
+
+      setTimeout(() => {
+        const homeSection = document.getElementById('homeSection');
+        if (homeSection) {
+          homeSection.scrollIntoView({ behavior: 'smooth' });
+        }
+        // Close the menu when a link is clicked
+        closeMenu();
+      }, 100);
+    };
+
     const linkClasses = (linkName) => `font-helvetica-neue text-[30px] ${
       selectedLink === linkName
         ? 'selected_link_color cursor-pointer'
         : 'standby_link_color hover:text-black cursor-pointer'
     }`;
+    
 
     useEffect(() => {
       // Scroll to the top of the page when navigating between pages
@@ -118,13 +135,13 @@ const Navbar = () => {
     return (
       <nav className={`fixed main-bg top-0 left-0 w-screen md:h-20 h-20  flex items-center justify-between p-8 md:pt-[40px] z-50 transition-all duration-300 ${hideNavbar ? '-translate-y-20' : 'translate-y-0'}`}>
         <div className="main-bg md:ml-4 ml-0 flex">
-          <RouterLink to="/"> {/* Use RouterLink to navigate to the MainPage ("/") */}
-            <img src={logo} alt="Image 1" className="md:w-[300px] w-[150px] h-10" />
+          <RouterLink to="/" spy={true} smooth={true} duration={500} onClick={handleHomeClick}> {/* Use RouterLink to navigate to the MainPage ("/") */}
+            <img src={logo} alt="Image 1" className="md:w-[300px] w-[150px] h-10"  />
           </RouterLink>
         </div>
         <div className={`Links mr-[50px] hidden md:flex space-x-10 ${showMenu ? 'hidden' : ''}`}>
-          <RouterLink to="/"> {/* Use RouterLink to navigate to the MainPage ("/") */}
-            <a className={linkClasses('Home')} onClick={closeMenu}>
+          <RouterLink to="/" spy={true} smooth={true} duration={500} onClick={handleHomeClick}> {/* Use RouterLink to navigate to the MainPage ("/") */}
+            <a className={linkClasses('Home')} >
               Home
             </a>
           </RouterLink>

@@ -23,9 +23,9 @@ import arrow_green from '../../images/shapes/arrow-green.svg';
 import asset3 from '../../images/assets/sd-homepage.png';
 
     //PROJECT 4
-import shape_pink from '../../images/shapes/shape-pink.svg';
-import arrow_pink from '../../images/shapes/arrow-pink.svg';
-import asset4 from '../../images/assets/sweden-homepage.png';
+//import shape_pink from '../../images/shapes/shape-pink.svg';
+//import arrow_pink from '../../images/shapes/arrow-pink.svg';
+//import asset4 from '../../images/assets/sweden-homepage.png';
 
     
 
@@ -61,7 +61,7 @@ const projectData = [
     asset: asset3,
     link: '/Snow_Dunes'
   },
-  {
+  /*{
     id: 4,
     title: 'Embassy of Sweden',
     subtitle: 'EVENT BRANDING',
@@ -70,7 +70,7 @@ const projectData = [
     shape2: arrow_pink,
     asset: asset4,
     link: '/Embassy_of_Sweden'
-  },
+  },*/
   // Add more project data objects as needed
 ];
 

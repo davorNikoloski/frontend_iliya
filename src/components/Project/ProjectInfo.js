@@ -16,7 +16,9 @@ import img8 from '../../images/projects/Virtuocity/instagram.png';
 
 const MyProject = () => {
   return (
+
     <div className="main-bg mt-20 flex flex-col lg:flex-col items-center justify-center lg:justify-start lg:space-x-6 pl-0">
+      
       {/* Description Div */}
       <div className='flex flex-col pl-20'>
         <div className="text-center lg:text-left w-full">

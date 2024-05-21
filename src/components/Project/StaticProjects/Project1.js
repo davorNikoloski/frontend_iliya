@@ -1,4 +1,6 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+
 import '../../../styles/colors.css';
 import rectangle_blue from '../../../images/shapes/rectangle-blue.svg';
 import img1 from '../../../images/assets/vc-homepage.png';
@@ -12,11 +14,29 @@ import pattern from '../../../images/projects/1.Virtuocity/pattern.png';
 import img8 from '../../../images/projects/1.Virtuocity/instagram.png';
 
 import ContactForm from '../../Contact/Contact';
+import SliderProjects from '../../Home/SliderProjects';
+import Nda from '../../Project/nda';
+
+
+import arNext from '../../../images/shapes/arrow-red.svg';
+import arPrev from '../../../images/shapes/arrow-pink.svg';
+
+
+const sliderData = [
+  {
+    pID: 1,
+    arN: arNext,
+    arP: arPrev,
+    lN: '/Angry_Birds_World',
+    lP: '/Embassy_of_Sweden'
+  }
+]
 
 
 const MyProject = () => {
   return (
     <div className="main-bg mt-20 flex flex-col lg:flex-col items-center justify-center lg:justify-start">
+      <Nda className=''  />
       {/* Description Div */}
       <div className='flex flex-col md:pl-[100px]'>
         <div className="text-center lg:text-left w-full mb-[20px] md:mb-0">
@@ -131,11 +151,29 @@ const MyProject = () => {
       <div className="w-full flex justify-center align-center mt-5">
         <img src={img8} alt="Image 3" className="w-9/12 md:w-9/12 h-auto" />
       </div>
-      <div id='contactSection' className='w-full pt-[20px]'>
+        <div className='w-full'>
+          {sliderData.map((slider) => (
+            <SliderProjects
+              key={slider.id}
+              arrowN={slider.arN}
+              arrowP={slider.arP}
+              linkN={slider.lN}
+              linkP={slider.lP}
+            />
+          ))}
+        </div>
+      <div id='contactSection' className='w-full'>
       <ContactForm className />
       </div>
+
     </div>
   );
 };
+SliderProjects.propTypes = {
+  arrowN: PropTypes.string.isRequired,
+  arrowP: PropTypes.string.isRequired,
+  linkN: PropTypes.string.isRequired,
+  linkP: PropTypes.string.isRequired,
 
+};
 export default MyProject;

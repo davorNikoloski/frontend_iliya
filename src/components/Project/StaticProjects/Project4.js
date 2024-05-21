@@ -1,4 +1,6 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+
 import '../../../styles/colors.css';
 
 import shape_blue from '../../../images/shapes/shape-pink.svg';
@@ -10,11 +12,26 @@ import img4 from '../../../images/projects/4.Embassy-of-Sweden/EmbassyOfSweden-B
 import img5 from '../../../images/projects/4.Embassy-of-Sweden/EmbassyOfSweden-invitation.webp';
 
 import ContactForm from '../../Contact/Contact';
+import SliderProjects from '../../Home/SliderProjects';
+import Nda from '../../Project/nda';
 
+import arNext from '../../../images/shapes/arrow-blue.svg';
+import arPrev from '../../../images/shapes/arrow-green.svg';
+
+const sliderData = [
+  {
+    pID: 4,
+    arN: arNext,
+    arP: arPrev,
+    lN: '/Virtuocity',
+    lP: '/Snow_Dunes'
+  }
+]
 
 const Project4 = () => {
   return (
     <div className="main-bg mt-20 flex flex-col lg:flex-col items-center justify-center lg:justify-start">
+      <Nda className />
       {/* Description Div */}
       <div className='flex flex-col md:pl-[100px]'>
         <div className="text-center lg:text-left w-full">
@@ -23,7 +40,7 @@ const Project4 = () => {
               <img
                 src={shape_blue}
                 alt="Iliya Binoski"
-                className="max-w-full w-[40px] h-10 md:w-6 mt-[10px] pt-3 md:pl-0 pl-4"
+                className="max-w-full w-[40px] h-10 md:w-6 mt-[10px] pt-4 md:pl-0 pl-4"
               />
             </div>
 
@@ -96,12 +113,29 @@ const Project4 = () => {
 
         </div>
       </div>
-      <hr className="w-[90%] h-[1px] mx-auto my-1 bg-gray-100 border-0 rounded md:my-10 dark:bg-gray-400" />
-      <div id='contactSection' className='w-full pt-[20px]'>
+      {/*<hr className="w-[90%] h-[1px] mx-auto my-1 bg-gray-100 border-0 rounded md:my-10 dark:bg-gray-400" />*/}
+      <div className='w-full'>
+          {sliderData.map((slider) => (
+            <SliderProjects
+              key={slider.id}
+              arrowN={slider.arN}
+              arrowP={slider.arP}
+              linkN={slider.lN}
+              linkP={slider.lP}
+            />
+          ))}
+        </div>
+      <div id='contactSection' className='w-full'>
         <ContactForm className />
       </div>
     </div>
   );
 };
+SliderProjects.propTypes = {
+  arrowN: PropTypes.string.isRequired,
+  arrowP: PropTypes.string.isRequired,
+  linkN: PropTypes.string.isRequired,
+  linkP: PropTypes.string.isRequired,
 
+};
 export default Project4;

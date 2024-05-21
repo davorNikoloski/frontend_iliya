@@ -12,7 +12,7 @@ import '../../styles/colors.css'; // Import your CSS file
 
 const ContactForm = () => {
   return (
-    <div className=" main-bg py-[2.5%] max-h-screen flex flex-col md:flex-col h-[30vh]">
+    <div className=" main-bg py-[2.5%] max-h-screen flex flex-col md:flex-col h-[25vh]">
       {/* Left Column */}
       <div className="flex flex-row items-center justify-left ml-[36px] md:ml-[52px]">
         {/* Icon */}
